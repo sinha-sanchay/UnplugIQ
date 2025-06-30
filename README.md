@@ -113,16 +113,17 @@ Or run `UnplugIqApplication.java` in IntelliJ or VS Code.
 
 ```json
 {
-  "identifier": "sanchay@example.com",  // or use username
-  "password": "yourpassword"
+  "identifier": "alix123@py.com",   // or use username
+  "password": "alix123"
 }
+
 ```
 
 Returns:
 
 ```json
 {
-  "token": "Bearer eyJhbGciOiJIUzI1NiIs..."
+    "token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2VhbGl4IiwiaWF0IjoxNzUxMjczODI2LCJleHAiOjE3NTEzMDk4MjZ9.O6lD01_3Fz-F-5hLhQo0aUtnn2eGLrQM1RmAnnAr36w"
 }
 ```
 
