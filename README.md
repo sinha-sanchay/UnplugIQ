@@ -63,7 +63,7 @@ src/main/java/com/backend
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/unplugiq-backend.git
+git clone https://github.com/sinha-sanchay/unplugiq-backend.git
 cd unplugiq-backend
 ```
 
@@ -78,7 +78,7 @@ jwt.secret=your_super_secret_key
 spring.jpa.hibernate.ddl-auto=update
 ```
 
-Make sure PostgreSQL is running and the database `unplugiq` is created.
+➡️ Make sure PostgreSQL is running and the database `unplugiq` is created.
 
 ---
 
@@ -88,7 +88,7 @@ Make sure PostgreSQL is running and the database `unplugiq` is created.
 ./mvnw spring-boot:run
 ```
 
-Or run `UnplugIqApplication.java` in IntelliJ/VS Code.
+Or run `UnplugIqApplication.java` in IntelliJ or VS Code.
 
 ---
 
@@ -152,11 +152,11 @@ Authorization: Bearer <token>
 
 ---
 
-## 🧑‍💻 Author
+## 👨‍💻 Author
 
 **Sanchay Sinha**  
 Backend Developer | Java | Spring Boot | PostgreSQL  
-🔗 GitHub: [github.com/YOUR_USERNAME](https://github.com/YOUR_USERNAME)
+🔗 GitHub: [github.com/sinha-sanchay](https://github.com/sinha-sanchay)
 
 ---
 
