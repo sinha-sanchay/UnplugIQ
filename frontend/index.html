@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UnplugIQ - Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- Top Bar -->
+<header class="top-bar">
+  <div>
+    <h1>Welcome, <span id="username">Loading...</span> 👋</h1>
+    <p id="quote">"Grow your mind, not your dependency."</p>
+  </div>
+  <div class="top-right">
+    <button id="loginBtn">Login</button>
+    <button id="logoutBtn" style="display: none;">Logout</button>
+  </div>
+</header>
+
+<!-- MAIN CONTAINER -->
+<div class="container">
+
+  <!-- Left: Feature Boxes -->
+  <main class="main-dashboard">
+
+    <!-- Content Writing -->
+    <section class="card" onclick="toggleFeature('writing')">
+      <h2>📝 Content Writing</h2>
+      <div class="subfeatures" id="writing">
+        <button>Diary</button>
+        <button>Email</button>
+        <button>Letter</button>
+        <button>Passage</button>
+        <button>Essay</button>
+      </div>
+    </section>
+
+    <!-- Speaking -->
+    <section class="card" onclick="toggleFeature('speaking')">
+      <h2>🎤 Speaking</h2>
+      <div class="subfeatures" id="speaking">
+        <button>Start Speaking</button>
+        <button>View Transcript</button>
+      </div>
+    </section>
+
+    <!-- Vocabulary -->
+    <section class="card" onclick="toggleFeature('vocab')">
+      <h2>📚 Vocabulary</h2>
+      <div class="subfeatures" id="vocab">
+        <button>Daily Word</button>
+        <button>Quiz</button>
+        <button>Use in Sentence</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Right: Points Panel -->
+  <aside class="points-panel">
+    <h2>🏆 Your Progress</h2>
+    <p><strong>Points:</strong> <span id="userPoints">0</span></p>
+    <p><strong>Stars:</strong> <span id="userStars">⭐</span></p>
+
+    <div class="progress-bar">
+      <div class="progress" id="progressFill" style="width: 0%;"></div>
+    </div>
+    <p class="level-info">Level 1: Beginner</p>
+  </aside>
+
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>💡 Tip of the Day: “Great writing starts with thinking.”</p>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  document.getElementById("loginBtn").addEventListener("click", () => {
+    window.location.href = "login.html";
+  });
+</script>
+
+</body>
+</html>

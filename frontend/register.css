@@ -1,0 +1,79 @@
+/* Same base as login.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.register-container {
+  background: #1e1e1e;
+  padding: 40px 50px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 140, 0, 0.3);
+  text-align: center;
+  width: 400px;
+}
+
+.logo {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #ff8800;
+}
+
+.logo span {
+  color: #ffffff;
+}
+
+.register-box h2 {
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.register-box input {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  background-color: #2b2b2b;
+  color: #fff;
+  font-size: 14px;
+}
+
+.register-box button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #ff8800;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.register-box button:hover {
+  background: #ffa733;
+}
+
+.info {
+  margin-top: 15px;
+  font-size: 13px;
+  color: #bbb;
+}
+
+.info a {
+  color: #ff8800;
+  text-decoration: none;
+}
