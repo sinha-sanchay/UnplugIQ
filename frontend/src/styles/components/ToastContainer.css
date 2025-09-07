@@ -1,0 +1,43 @@
+/* Toast container styles */
+.toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+}
+
+.toast-container > * {
+  pointer-events: auto;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .toast-container {
+    top: 10px;
+    right: 0;
+    left: 0;
+    align-items: center;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .toast-container .toast {
+    border: 2px solid;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .toast-container .toast {
+    transition: none;
+  }
+  
+  .toast-container .toast--visible,
+  .toast-container .toast--hidden {
+    animation: none;
+  }
+}

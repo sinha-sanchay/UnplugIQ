@@ -1,0 +1,82 @@
+.card {
+  background-color: white;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
+}
+
+/* Variants */
+.card--default {
+  border: 1px solid #e5e7eb;
+}
+
+.card--outlined {
+  border: 2px solid #d1d5db;
+}
+
+.card--elevated {
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Padding variants */
+.card--padding-none {
+  padding: 0;
+}
+
+.card--padding-small {
+  padding: 0.75rem;
+}
+
+.card--padding-medium {
+  padding: 1.5rem;
+}
+
+.card--padding-large {
+  padding: 2rem;
+}
+
+/* Interactive states */
+.card--hoverable:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.card--clickable {
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.card--clickable .card {
+  width: 100%;
+  height: 100%;
+}
+
+.card--clickable:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.card--clickable:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+.card--clickable:active {
+  transform: translateY(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .card--padding-medium {
+    padding: 1rem;
+  }
+  
+  .card--padding-large {
+    padding: 1.5rem;
+  }
+}
