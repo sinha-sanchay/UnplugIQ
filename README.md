@@ -1,166 +1,146 @@
-# 🧠 UnplugIQ - Backend
+# Challenge Platform
 
-An AI-powered backend system for **UnplugIQ**, a platform to enhance English communication skills through writing, speaking, and vocabulary — with intelligent feedback, scoring, and user progress tracking.
+A modern web application for creating and participating in various types of challenges (Writing, Speaking, Logical).
 
----
+## 🌟 Features
 
-## 🚀 Features
+- **User Authentication**: Secure login and registration
+- **Challenge Management**: Browse and participate in different challenge types
+- **Submission System**: Submit responses to challenges with rich text support
+- **User Dashboard**: Track your submissions and progress
+- **Responsive Design**: Works on desktop, tablet, and mobile devices
+- **Real-time Feedback**: Instant validation and error handling
 
-- ✅ User Registration (working)
-- 🔐 JWT-based Authentication
-- 🔒 Secure Password Encryption
-- 🗂️ Structured REST APIs
-- 💾 PostgreSQL Database Integration
-- 📈 User Progress & Points (tracked)
-- 🧠 ML Integration Placeholder (writing evaluation, AI detection, etc.)
-- ❌ Login via UI (pending; backend ready and tested in Postman)
+## 🛠️ Tech Stack
 
----
+**Frontend:**
+- React 18 with TypeScript
+- Vite for fast development and building
+- CSS3 with responsive design
+- Axios for API communication
 
-## 📦 Tech Stack
+**Backend:**
+- Spring Boot (Java)
+- JPA/Hibernate for database operations
+- RESTful API design
+- JWT authentication
 
-| Layer         | Technology              |
-|---------------|--------------------------|
-| Language      | Java 17                  |
-| Framework     | Spring Boot 3.x          |
-| Security      | Spring Security + JWT    |
-| Database      | PostgreSQL               |
-| Build Tool    | Maven                    |
-| Auth Logic    | CustomUserDetailsService |
-| Token         | JWT                      |
-| Dev Tools     | Lombok, Postman          |
+## 🚀 Quick Start
 
----
+### Prerequisites
+- Node.js 18+
+- Java 17+
+- Maven 3.6+
+
+### Local Development
+
+1. **Clone the repository**
+   ```bash
+   git clone <your-repo-url>
+   cd challenge-platform
+   ```
+
+2. **Start the backend**
+   ```bash
+   cd backend
+   mvn spring-boot:run
+   ```
+
+3. **Start the frontend**
+   ```bash
+   cd frontend
+   npm install
+   npm run dev
+   ```
+
+4. **Access the application**
+   - Frontend: http://localhost:3000
+   - Backend API: http://localhost:8080/api
+
+## 📦 Deployment
+
+This project is designed for easy deployment to free hosting services:
+
+- **Frontend**: Netlify, Vercel, GitHub Pages
+- **Backend**: Railway, Render, Heroku
+- **Database**: Railway PostgreSQL, Supabase, PlanetScale
+
+See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed deployment instructions.
+
+## 🎯 Challenge Types
+
+- **Writing**: Creative writing prompts and exercises
+- **Speaking**: Presentation and communication challenges
+- **Logical**: Problem-solving and analytical thinking tasks
 
 ## 📁 Project Structure
 
 ```
-src/main/java/com/backend
-├── controller       # REST Controllers
-├── dto              # LoginRequest, LoginResponse, etc.
-├── model            # User Entity
-├── repository       # Spring Data JPA interfaces
-├── security         # JWT Filter, Custom UserDetails, Config
-├── service          # Business Logic (Registration, Login)
-└── UnplugIqApplication.java
+challenge-platform/
+├── frontend/                 # React frontend
+│   ├── dist/                # Built files (ready to deploy)
+│   ├── src/
+│   │   ├── components/      # Reusable UI components
+│   │   ├── pages/           # Page components
+│   │   ├── services/        # API services
+│   │   ├── context/         # React context providers
+│   │   └── styles/          # CSS styles
+│   ├── package.json
+│   └── vite.config.ts
+├── backend/                  # Spring Boot backend
+│   ├── src/
+│   │   └── main/java/com/backend/
+│   │       ├── controller/  # REST Controllers
+│   │       ├── model/       # JPA Entities
+│   │       ├── repository/  # Data repositories
+│   │       └── service/     # Business logic
+│   ├── pom.xml
+│   └── target/
+└── DEPLOYMENT.md            # Deployment guide
 ```
 
----
+## 🗄️ Database Setup
 
-## 📬 API Endpoints
+The application requires a SQL database. For development, you can use:
 
-| Method | Endpoint                 | Description                       | Auth |
-|--------|--------------------------|-----------------------------------|------|
-| POST   | `/api/users/register`    | Register new user                 | ❌   |
-| POST   | `/api/users/login`       | Login with username or email      | ❌   |
-| GET    | `/api/users/me`          | Get logged-in user info           | ✅   |
-| GET    | `/api/users/progress`    | Get points/stars/progress         | ✅   |
+### Quick Setup with Railway (Free)
+1. Go to [railway.app](https://railway.app)
+2. Create new project → Add PostgreSQL
+3. Copy the connection details
+4. Update `backend/src/main/resources/application.properties`
 
----
-
-## ⚙️ How to Setup
-
-### 1️⃣ Clone the Repository
-
-```bash
-git clone https://github.com/sinha-sanchay/unplugiq-backend.git
-cd unplugiq-backend
-```
-
-### 2️⃣ Configure `application.properties`
-
+### Database Configuration
 ```properties
-spring.datasource.url=jdbc:postgresql://localhost:5432/unplugiq
-spring.datasource.username=your_db_username
-spring.datasource.password=your_db_password
-
-jwt.secret=your_super_secret_key
+# PostgreSQL (recommended)
+spring.datasource.url=jdbc:postgresql://your-host:5432/your-database
+spring.datasource.username=your-username
+spring.datasource.password=your-password
 spring.jpa.hibernate.ddl-auto=update
 ```
 
-➡️ Make sure PostgreSQL is running and the database `unplugiq` is created.
+## 🌐 API Endpoints
 
----
+| Method | Endpoint | Description | Auth Required |
+|--------|----------|-------------|---------------|
+| POST | `/api/users/register` | Register new user | ❌ |
+| POST | `/api/users/login` | User login | ❌ |
+| GET | `/api/challenges` | Get all challenges | ❌ |
+| GET | `/api/challenges/{id}` | Get challenge by ID | ❌ |
+| POST | `/api/submissions` | Submit challenge response | ✅ |
+| GET | `/api/submissions/user/{userId}` | Get user submissions | ✅ |
 
-### 3️⃣ Run the App
+## 🤝 Contributing
 
-```bash
-./mvnw spring-boot:run
-```
-
-Or run `UnplugIqApplication.java` in IntelliJ or VS Code.
-
----
-
-## 🧪 API Testing (Postman)
-
-### ✅ Register (Works)
-
-**POST** `http://localhost:8080/api/users/register`
-
-```json
-{
-  "name": "Sanchay Sinha",
-  "username": "sanchay123",
-  "email": "sanchay@example.com",
-  "password": "yourpassword"
-}
-```
-
-### ✅ Login (Backend working)
-
-**POST** `http://localhost:8080/api/users/login`
-
-```json
-{
-  "identifier": "alix123@py.com",   // or use username
-  "password": "alix123"
-}
-
-```
-
-Returns:
-
-```json
-{
-    "token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2VhbGl4IiwiaWF0IjoxNzUxMjczODI2LCJleHAiOjE3NTEzMDk4MjZ9.O6lD01_3Fz-F-5hLhQo0aUtnn2eGLrQM1RmAnnAr36w"
-}
-```
-
-Set this in Postman headers:
-
-```
-Authorization: Bearer <token>
-```
-
----
-
-## 🖥️ Frontend Status
-
-- ✅ Registration UI connected
-- ❌ Login not fully working (token handling fix needed)
-- 🧪 Backend login tested via Postman
-
----
-
-## 🧠 Future Roadmap
-
-- 📌 AI Feedback for writing (tone, grammar, etc.)
-- 📌 Speaking analysis & transcription
-- 📌 Vocabulary tracking & daily challenge
-- 🌟 Points → Stars leveling like HackerRank
-- 📈 Dashboard analytics
-
----
-
-## 👨‍💻 Author
-
-**Sanchay Sinha**  
-Backend Developer | Java | Spring Boot | PostgreSQL  
-🔗 GitHub: [github.com/sinha-sanchay](https://github.com/sinha-sanchay)
-
----
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ## 📄 License
 
-This project is licensed under the [MIT License](./LICENSE).
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+This project was created with the assistance of Kiro AI.
