@@ -1,0 +1,51 @@
+-- Sample Users (password is 'password' for all users)
+INSERT INTO users (username, email, password, role, created_at) VALUES 
+('john_doe', 'john@example.com', '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2uheWG/igi.', 'USER', CURRENT_TIMESTAMP),
+('jane_smith', 'jane@example.com', '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2uheWG/igi.', 'USER', CURRENT_TIMESTAMP),
+('admin_user', 'admin@example.com', '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2uheWG/igi.', 'ADMIN', CURRENT_TIMESTAMP);
+
+-- Writing Challenges
+INSERT INTO challenge (title, description, type, difficulty, max_score, time_limit, tags, date_posted) VALUES 
+('Write a Short Story', 'Create a compelling short story in 500 words or less. Focus on character development and plot progression. Your story should have a clear beginning, middle, and end.', 'WRITING', 'MEDIUM', 100, 45, 'creative,storytelling,fiction', CURRENT_DATE),
+('Persuasive Essay Challenge', 'Write a persuasive essay about the importance of renewable energy. Use facts, statistics, and logical arguments to support your position. Aim for 300-400 words.', 'WRITING', 'MEDIUM', 100, 30, 'essay,persuasive,environment', CURRENT_DATE),
+('Creative Poetry', 'Compose an original poem about nature. You can choose any style - free verse, sonnet, haiku, or any other form that inspires you. Focus on vivid imagery and emotion.', 'WRITING', 'EASY', 80, 25, 'poetry,creative,nature', CURRENT_DATE),
+('Business Proposal', 'Write a business proposal for a new mobile app idea. Include the problem it solves, target audience, key features, and potential revenue model. Keep it concise but comprehensive.', 'WRITING', 'HARD', 120, 60, 'business,proposal,entrepreneurship', CURRENT_DATE),
+('Formal Letter Writing', 'Write a formal complaint letter to a company about a defective product you purchased. Include all necessary details, maintain a professional tone, and clearly state your desired resolution.', 'WRITING', 'EASY', 80, 20, 'formal,letter,communication', CURRENT_DATE),
+('Creative Dialogue', 'Write a dialogue between two characters who are meeting for the first time in an unusual situation (elevator stuck, waiting room, etc.). Show their personalities through their conversation.', 'WRITING', 'MEDIUM', 90, 30, 'dialogue,creative,character', CURRENT_DATE),
+('Technical Documentation', 'Write clear instructions on how to set up a home Wi-Fi network for someone who is not tech-savvy. Use simple language and include troubleshooting tips.', 'WRITING', 'MEDIUM', 100, 40, 'technical,documentation,instructions', CURRENT_DATE),
+('Opinion Article', 'Write an opinion piece about the impact of social media on modern relationships. Present both positive and negative aspects with supporting examples.', 'WRITING', 'MEDIUM', 100, 35, 'opinion,social media,analysis', CURRENT_DATE),
+('Character Analysis', 'Choose a fictional character from any book or movie and write a detailed character analysis. Discuss their motivations, development, and impact on the story.', 'WRITING', 'HARD', 110, 50, 'analysis,literature,character', CURRENT_DATE),
+('Travel Blog Post', 'Write an engaging travel blog post about a place you''ve visited or would like to visit. Include vivid descriptions, personal experiences, and practical tips for other travelers.', 'WRITING', 'EASY', 85, 30, 'travel,blog,descriptive', CURRENT_DATE),
+('Product Review', 'Write a comprehensive review of a product you use regularly. Discuss its features, pros and cons, and provide a recommendation for potential buyers.', 'WRITING', 'EASY', 80, 25, 'review,product,evaluation', CURRENT_DATE),
+('News Article', 'Write a news article about a recent technological breakthrough. Follow the inverted pyramid structure and include quotes from imaginary experts.', 'WRITING', 'HARD', 110, 45, 'news,journalism,technology', CURRENT_DATE);
+
+-- Speaking Challenges  
+INSERT INTO challenge (title, description, type, difficulty, max_score, time_limit, tags, date_posted) VALUES 
+('Elevator Pitch Challenge', 'Record a 60-second elevator pitch about yourself. Imagine you are introducing yourself to a potential employer or business partner. Be confident, clear, and memorable.', 'SPEAKING', 'EASY', 80, 5, 'pitch,introduction,professional', CURRENT_DATE),
+('Product Presentation', 'Create a 3-minute presentation about your favorite product. Explain what makes it special, who should use it, and why. Focus on clear articulation and persuasive delivery.', 'SPEAKING', 'MEDIUM', 100, 10, 'presentation,product,persuasion', CURRENT_DATE),
+('Storytelling Challenge', 'Tell a personal story about overcoming a challenge in your life. Focus on engaging your audience, using appropriate pacing, and delivering a meaningful message.', 'SPEAKING', 'MEDIUM', 100, 8, 'storytelling,personal,inspiration', CURRENT_DATE),
+('Impromptu Speech', 'Give a 2-minute impromptu speech on the topic: "If I could change one thing about the world." Organize your thoughts quickly and speak with confidence.', 'SPEAKING', 'HARD', 110, 5, 'impromptu,speech,quick thinking', CURRENT_DATE),
+('Debate Argument', 'Present a 3-minute argument for or against remote work being the future of employment. Use logical reasoning, statistics, and real-world examples.', 'SPEAKING', 'HARD', 120, 10, 'debate,argument,workplace', CURRENT_DATE),
+('Teaching Explanation', 'Explain how to cook your favorite dish as if you''re teaching someone who has never cooked before. Be clear, detailed, and encouraging.', 'SPEAKING', 'EASY', 85, 8, 'teaching,explanation,cooking', CURRENT_DATE),
+('Motivational Speech', 'Deliver a 2-minute motivational speech to inspire someone who is feeling discouraged about their career. Use personal anecdotes and positive language.', 'SPEAKING', 'MEDIUM', 95, 6, 'motivation,inspiration,career', CURRENT_DATE),
+('Interview Response', 'Answer this common interview question: "Tell me about a time you failed and what you learned from it." Structure your response using the STAR method.', 'SPEAKING', 'MEDIUM', 90, 5, 'interview,STAR method,professional', CURRENT_DATE),
+('Book Recommendation', 'Give a compelling 2-minute recommendation for a book you''ve read recently. Explain why others should read it without giving away spoilers.', 'SPEAKING', 'EASY', 80, 6, 'recommendation,books,persuasion', CURRENT_DATE),
+('Technology Explanation', 'Explain how artificial intelligence works to someone who has no technical background. Use simple analogies and avoid jargon.', 'SPEAKING', 'HARD', 110, 8, 'technology,explanation,AI', CURRENT_DATE);
+
+-- Logical Challenges
+INSERT INTO challenge (title, description, type, difficulty, max_score, time_limit, tags, date_posted) VALUES 
+('Logic Puzzle Solver', 'Solve this logic puzzle: Five friends live in different colored houses and have different pets. Using the given clues, determine who lives where and owns which pet. Explain your reasoning step by step.', 'LOGICAL', 'MEDIUM', 100, 30, 'logic,puzzle,deduction', CURRENT_DATE),
+('Algorithm Design', 'Design an algorithm to find the shortest path between two points in a city with traffic constraints. Describe your approach, consider edge cases, and explain the time complexity.', 'LOGICAL', 'EXPERT', 150, 60, 'algorithm,programming,optimization', CURRENT_DATE),
+('Critical Thinking Exercise', 'Analyze this scenario: A company''s profits increased by 20% after implementing a new policy. However, employee satisfaction decreased by 15%. Evaluate the situation and propose solutions.', 'LOGICAL', 'HARD', 120, 45, 'critical thinking,analysis,business', CURRENT_DATE),
+('Mathematical Problem', 'You have 12 balls that look identical, but one is slightly heavier. Using a balance scale only 3 times, how can you identify the heavier ball? Explain your strategy.', 'LOGICAL', 'HARD', 110, 25, 'mathematics,strategy,problem solving', CURRENT_DATE),
+('Pattern Recognition', 'Find the pattern in this sequence: 2, 6, 12, 20, 30, ?. Explain the rule and provide the next three numbers in the sequence.', 'LOGICAL', 'EASY', 80, 15, 'patterns,mathematics,sequences', CURRENT_DATE),
+('Decision Analysis', 'You''re choosing between three job offers with different salaries, benefits, and growth opportunities. Create a decision matrix and explain your reasoning process.', 'LOGICAL', 'MEDIUM', 100, 35, 'decision making,analysis,career', CURRENT_DATE),
+('System Design', 'Design a simple library management system. Define the main components, their relationships, and how they would handle common operations like borrowing and returning books.', 'LOGICAL', 'HARD', 130, 50, 'system design,architecture,software', CURRENT_DATE),
+('Probability Problem', 'In a game show, there are 3 doors. Behind one is a car, behind the others are goats. After you choose a door, the host opens another door with a goat. Should you switch? Explain why.', 'LOGICAL', 'MEDIUM', 90, 20, 'probability,statistics,reasoning', CURRENT_DATE),
+('Resource Optimization', 'You have a limited budget to organize a conference for 200 people. Prioritize the essential elements and explain how you would allocate resources efficiently.', 'LOGICAL', 'MEDIUM', 100, 40, 'optimization,planning,resource management', CURRENT_DATE),
+('Logical Reasoning', 'All roses are flowers. Some flowers are red. Some red things are beautiful. Can you conclude that some roses are beautiful? Explain your logical reasoning.', 'LOGICAL', 'EASY', 75, 15, 'logic,reasoning,syllogism', CURRENT_DATE),
+('Process Improvement', 'Identify inefficiencies in a typical morning routine and propose a optimized schedule that saves time while maintaining quality of life.', 'LOGICAL', 'EASY', 85, 25, 'optimization,efficiency,lifestyle', CURRENT_DATE),
+('Data Analysis', 'Given sales data showing a 30% increase in online purchases but 20% decrease in store visits, what conclusions can you draw and what recommendations would you make?', 'LOGICAL', 'MEDIUM', 105, 35, 'data analysis,business intelligence,trends', CURRENT_DATE);
+
+-- Sample Submissions (will be added after users and challenges are created)
+-- Note: These will be inserted with actual IDs after the application starts

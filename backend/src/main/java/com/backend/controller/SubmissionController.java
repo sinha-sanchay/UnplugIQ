@@ -14,7 +14,7 @@ public class SubmissionController {
     @Autowired
     private SubmissionService submissionService;
 
-    // ✅ Submit an answer to a challenge
+    //  Submit an answer to a challenge
     @PostMapping
     public Submission submitResponse(@RequestParam Long userId,
                                      @RequestParam Long challengeId,
@@ -22,19 +22,19 @@ public class SubmissionController {
         return submissionService.submitResponse(userId, challengeId, submissionText);
     }
 
-    // ✅ Get all submissions (admin use or dashboard)
+    //  Get all submissions (admin use or dashboard)
     @GetMapping
     public List<Submission> getAllSubmissions() {
         return submissionService.getAllSubmissions();
     }
 
-    // ✅ Get submissions by user
+    //  Get submissions by user
     @GetMapping("/user/{userId}")
     public List<Submission> getByUser(@PathVariable Long userId) {
         return submissionService.getByUserId(userId);
     }
 
-    // ✅ Get submissions by challenge
+    //  Get submissions by challenge
     @GetMapping("/challenge/{challengeId}")
     public List<Submission> getByChallenge(@PathVariable Long challengeId) {
         return submissionService.getByChallengeId(challengeId);
