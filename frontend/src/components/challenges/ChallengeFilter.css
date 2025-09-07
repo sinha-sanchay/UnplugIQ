@@ -1,0 +1,215 @@
+.challenge-filter {
+  width: 100%;
+  font-family: inherit;
+}
+
+.challenge-filter__header {
+  margin-bottom: 1.5rem;
+}
+
+.challenge-filter__title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 0.5rem 0;
+}
+
+.challenge-filter__description {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Desktop filter options */
+.challenge-filter__options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.challenge-filter__option {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: #fff;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  text-align: left;
+}
+
+.challenge-filter__option:hover {
+  border-color: #d1d5db;
+  background-color: #f9fafb;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.challenge-filter__option--active {
+  border-color: #007bff;
+  background-color: #eff6ff;
+  color: #1d4ed8;
+  box-shadow: 0 2px 8px rgba(0,123,255,0.15);
+}
+
+.challenge-filter__option-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.challenge-filter__option-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.challenge-filter__option-icon {
+  font-size: 1.25rem;
+}
+
+.challenge-filter__option-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.challenge-filter__count {
+  background-color: #f3f4f6;
+  color: #374151;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  min-width: 1.5rem;
+  text-align: center;
+}
+
+.challenge-filter__option--active .challenge-filter__count {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Mobile horizontal scroll */
+.challenge-filter__mobile {
+  display: none;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.challenge-filter__mobile::-webkit-scrollbar {
+  display: none;
+}
+
+.challenge-filter__mobile-scroll {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  min-width: max-content;
+}
+
+.challenge-filter__mobile-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.75rem 1rem;
+  background: #fff;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  min-width: 80px;
+  position: relative;
+}
+
+.challenge-filter__mobile-option:hover {
+  border-color: #d1d5db;
+  background-color: #f9fafb;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.challenge-filter__mobile-option--active {
+  border-color: #007bff;
+  background-color: #eff6ff;
+  color: #1d4ed8;
+  box-shadow: 0 2px 8px rgba(0,123,255,0.15);
+}
+
+.challenge-filter__mobile-icon {
+  font-size: 1.5rem;
+}
+
+.challenge-filter__mobile-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.challenge-filter__mobile-count {
+  position: absolute;
+  top: -0.25rem;
+  right: -0.25rem;
+  background-color: #ef4444;
+  color: #fff;
+  font-size: 0.625rem;
+  font-weight: 600;
+  padding: 0.125rem 0.375rem;
+  border-radius: 9999px;
+  min-width: 1.25rem;
+  text-align: center;
+  line-height: 1;
+}
+
+.challenge-filter__mobile-option--active .challenge-filter__mobile-count {
+  background-color: #007bff;
+}
+
+/* Focus states for accessibility */
+.challenge-filter__option:focus,
+.challenge-filter__mobile-option:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+.challenge-filter__option:focus:not(:focus-visible),
+.challenge-filter__mobile-option:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .challenge-filter__options {
+    display: none;
+  }
+  
+  .challenge-filter__mobile {
+    display: block;
+  }
+  
+  .challenge-filter__header {
+    margin-bottom: 1rem;
+  }
+  
+  .challenge-filter__title {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .challenge-filter__mobile-option {
+    min-width: 70px;
+    padding: 0.625rem 0.75rem;
+  }
+  
+  .challenge-filter__mobile-icon {
+    font-size: 1.25rem;
+  }
+  
+  .challenge-filter__mobile-label {
+    font-size: 0.6875rem;
+  }
+}
